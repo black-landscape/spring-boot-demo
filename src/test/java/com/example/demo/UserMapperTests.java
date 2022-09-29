@@ -44,10 +44,12 @@ public class UserMapperTests {
         userMapper.insertByMap(map);
         User u2 = userMapper.findByName("CCC");
         Assert.assertEquals(40, u2.getAge().intValue());
+        userMapper.delete(u2.getId());
 
         userMapper.insertByUser(new User("DDD", 50));
         User u3 = userMapper.findByName("DDD");
         Assert.assertEquals(50, u3.getAge().intValue());
+        userMapper.delete(u3.getId());
     }
 
     @Test
