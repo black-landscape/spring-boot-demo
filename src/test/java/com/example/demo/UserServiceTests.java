@@ -38,5 +38,7 @@ public class UserServiceTests {
         userService.deleteByName("Mike");
 
         Assert.assertEquals(3, userService.getAllUsers());
+
+        userService.deleteAllUsers();
     }
 }
