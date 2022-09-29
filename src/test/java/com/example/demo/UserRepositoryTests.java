@@ -38,5 +38,7 @@ public class UserRepositoryTests {
         userRepository.delete(userRepository.findByName("AAA"));
 
         Assert.assertEquals(9, userRepository.findAll().size());
+
+        userRepository.deleteAllInBatch();
     }
 }
