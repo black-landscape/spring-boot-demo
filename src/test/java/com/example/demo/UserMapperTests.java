@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import com.example.demo.entity.User;
+import com.example.demo.mapper.UserMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Assert;
 import org.junit.Test;
@@ -9,9 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Slf4j
 @RunWith(SpringRunner.class)
@@ -37,19 +37,6 @@ public class UserMapperTests {
         userMapper.delete(u.getId());
         u = userMapper.findByName("AAA");
         Assert.assertEquals(null, u);
-
-        Map<String, Object> map = new HashMap<>();
-        map.put("name", "CCC");
-        map.put("age", 40);
-        userMapper.insertByMap(map);
-        User u2 = userMapper.findByName("CCC");
-        Assert.assertEquals(40, u2.getAge().intValue());
-        userMapper.delete(u2.getId());
-
-        userMapper.insertByUser(new User("DDD", 50));
-        User u3 = userMapper.findByName("DDD");
-        Assert.assertEquals(50, u3.getAge().intValue());
-        userMapper.delete(u3.getId());
     }
 
     @Test
