@@ -1,27 +1,21 @@
-= spring-boot-starter-swagger
+= Api Documentation
 
 
 [[_overview]]
 == Overview
-Spring Boot Starter Swagger
+Api Documentation
 
 
 === Version information
 [%hardbreaks]
-__Version__ : 2.0.2.RELEASE
-
-
-=== Contact information
-[%hardbreaks]
-__Contact__ : didi
-__Contact Email__ : dyc87112@qq.com
+__Version__ : 1.0
 
 
 === License information
 [%hardbreaks]
-__License__ : Apache License, Version 2.0
-__License URL__ : https://www.apache.org/licenses/LICENSE-2.0.html
-__Terms of service__ : https://github.com/dyc87112/spring-boot-starter-swagger
+__License__ : Apache 2.0
+__License URL__ : http://www.apache.org/licenses/LICENSE-2.0
+__Terms of service__ : urn:tos
 
 
 === URI scheme
@@ -35,7 +29,7 @@ __BasePath__ : /
 * 1-教师管理 : Teacher Controller
 * 2-学生管理 : Student Controller
 * 3-教学管理 : Teacher Controller
-* demo-application : Demo Application
+* basic-error-controller : Basic Error Controller
 * 用户管理 : User Controller
 
 
@@ -44,10 +38,10 @@ __BasePath__ : /
 [[_paths]]
 == Paths
 
-[[_indexusingpost]]
-=== index
+[[_errorhtmlusingpost]]
+=== errorHtml
 ....
-POST /hello
+POST /error
 ....
 
 
@@ -56,7 +50,7 @@ POST /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**201**|Created|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -71,27 +65,18 @@ POST /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusingget]]
-=== index
+[[_errorhtmlusingget]]
+=== errorHtml
 ....
-GET /hello
+GET /error
 ....
 
 
@@ -100,7 +85,7 @@ GET /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
 |**404**|Not Found|No Content
@@ -109,27 +94,18 @@ GET /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusingput]]
-=== index
+[[_errorhtmlusingput]]
+=== errorHtml
 ....
-PUT /hello
+PUT /error
 ....
 
 
@@ -138,7 +114,7 @@ PUT /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**201**|Created|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -153,27 +129,18 @@ PUT /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusingdelete]]
-=== index
+[[_errorhtmlusingdelete]]
+=== errorHtml
 ....
-DELETE /hello
+DELETE /error
 ....
 
 
@@ -182,7 +149,7 @@ DELETE /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**204**|No Content|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -191,27 +158,18 @@ DELETE /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusingpatch]]
-=== index
+[[_errorhtmlusingpatch]]
+=== errorHtml
 ....
-PATCH /hello
+PATCH /error
 ....
 
 
@@ -220,7 +178,7 @@ PATCH /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**204**|No Content|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -234,27 +192,18 @@ PATCH /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusinghead]]
-=== index
+[[_errorhtmlusinghead]]
+=== errorHtml
 ....
-HEAD /hello
+HEAD /error
 ....
 
 
@@ -263,7 +212,7 @@ HEAD /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**204**|No Content|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -277,27 +226,18 @@ HEAD /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
+* basic-error-controller
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
-[[_indexusingoptions]]
-=== index
+[[_errorhtmlusingoptions]]
+=== errorHtml
 ....
-OPTIONS /hello
+OPTIONS /error
 ....
 
 
@@ -306,7 +246,7 @@ OPTIONS /hello
 [options="header", cols=".^2,.^14,.^4"]
 |===
 |HTTP Code|Description|Schema
-|**200**|OK|string
+|**200**|OK|<<_modelandview,ModelAndView>>
 |**204**|No Content|No Content
 |**401**|Unauthorized|No Content
 |**403**|Forbidden|No Content
@@ -320,21 +260,12 @@ OPTIONS /hello
 
 ==== Produces
 
-* `*/*`
+* `text/html`
 
 
 ==== Tags
 
-* demo-application
-
-
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
+* basic-error-controller
 
 
 [[_createstudentusingpost]]
@@ -372,15 +303,6 @@ POST /student/create
 * 2-学生管理
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
 [[_getstudentteachersusingget]]
 === 获取教某个学生的老师清单
 ....
@@ -408,15 +330,6 @@ GET /student/his-teachers
 ==== Tags
 
 * 2-学生管理
-
-
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
 
 
 [[_getstudentlistusingget]]
@@ -449,15 +362,6 @@ GET /student/list
 * 3-教学管理
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
 [[_xxxusingget]]
 === xxx
 ....
@@ -486,15 +390,6 @@ GET /teacher/xxx
 
 * 1-教师管理
 * 3-教学管理
-
-
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
 
 
 [[_postuserusingpost]]
@@ -546,15 +441,6 @@ __required__|user|<<_user,User>>
 * 用户管理
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
 [[_getuserlistusingget]]
 === 获取用户列表
 ....
@@ -582,15 +468,6 @@ GET /users/
 ==== Tags
 
 * 用户管理
-
-
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
 
 
 [[_getuserusingget]]
@@ -634,15 +511,6 @@ __required__|id|integer (int64)
 ==== Tags
 
 * 用户管理
-
-
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
 
 
 [[_putuserusingput]]
@@ -696,15 +564,6 @@ __required__|user|<<_user,User>>
 * 用户管理
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
 [[_deleteuserusingdelete]]
 === 删除用户
 ....
@@ -748,19 +607,33 @@ __required__|id|integer (int64)
 * 用户管理
 
 
-==== Security
-
-[options="header", cols=".^3,.^4,.^13"]
-|===
-|Type|Name|Scopes
-|**apiKey**|**<<_authorization,Authorization>>**|global
-|===
-
-
 
 
 [[_definitions]]
 == Definitions
+
+[[_modelandview]]
+=== ModelAndView
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**empty** +
+__optional__|boolean
+|**model** +
+__optional__|object
+|**modelMap** +
+__optional__|< string, object > map
+|**reference** +
+__optional__|boolean
+|**status** +
+__optional__|enum (ACCEPTED, ALREADY_REPORTED, BAD_GATEWAY, BAD_REQUEST, BANDWIDTH_LIMIT_EXCEEDED, CHECKPOINT, CONFLICT, CONTINUE, CREATED, DESTINATION_LOCKED, EXPECTATION_FAILED, FAILED_DEPENDENCY, FORBIDDEN, FOUND, GATEWAY_TIMEOUT, GONE, HTTP_VERSION_NOT_SUPPORTED, IM_USED, INSUFFICIENT_SPACE_ON_RESOURCE, INSUFFICIENT_STORAGE, INTERNAL_SERVER_ERROR, I_AM_A_TEAPOT, LENGTH_REQUIRED, LOCKED, LOOP_DETECTED, METHOD_FAILURE, METHOD_NOT_ALLOWED, MOVED_PERMANENTLY, MOVED_TEMPORARILY, MULTIPLE_CHOICES, MULTI_STATUS, NETWORK_AUTHENTICATION_REQUIRED, NON_AUTHORITATIVE_INFORMATION, NOT_ACCEPTABLE, NOT_EXTENDED, NOT_FOUND, NOT_IMPLEMENTED, NOT_MODIFIED, NO_CONTENT, OK, PARTIAL_CONTENT, PAYLOAD_TOO_LARGE, PAYMENT_REQUIRED, PERMANENT_REDIRECT, PRECONDITION_FAILED, PRECONDITION_REQUIRED, PROCESSING, PROXY_AUTHENTICATION_REQUIRED, REQUESTED_RANGE_NOT_SATISFIABLE, REQUEST_ENTITY_TOO_LARGE, REQUEST_HEADER_FIELDS_TOO_LARGE, REQUEST_TIMEOUT, REQUEST_URI_TOO_LONG, RESET_CONTENT, SEE_OTHER, SERVICE_UNAVAILABLE, SWITCHING_PROTOCOLS, TEMPORARY_REDIRECT, TOO_EARLY, TOO_MANY_REQUESTS, UNAUTHORIZED, UNAVAILABLE_FOR_LEGAL_REASONS, UNPROCESSABLE_ENTITY, UNSUPPORTED_MEDIA_TYPE, UPGRADE_REQUIRED, URI_TOO_LONG, USE_PROXY, VARIANT_ALSO_NEGOTIATES)
+|**view** +
+__optional__|<<_view,View>>
+|**viewName** +
+__optional__|string
+|===
+
 
 [[_user]]
 === User
@@ -784,17 +657,17 @@ __optional__|用户姓名 +
 |===
 
 
+[[_view]]
+=== View
+
+[options="header", cols=".^3,.^4"]
+|===
+|Name|Schema
+|**contentType** +
+__optional__|string
+|===
 
 
-[[_securityscheme]]
-== Security
-
-[[_authorization]]
-=== Authorization
-[%hardbreaks]
-__Type__ : apiKey
-__Name__ : TOKEN
-__In__ : HEADER
 
 
 

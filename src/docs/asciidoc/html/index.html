@@ -5,7 +5,7 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.6.1">
-<title>spring-boot-starter-swagger</title>
+<title>Api Documentation</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -518,14 +518,13 @@ table.CodeRay td.code>pre{padding:0}
 </head>
 <body class="article toc2 toc-left">
 <div id="header">
-<h1>spring-boot-starter-swagger</h1>
+<h1>Api Documentation</h1>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
 <li><a href="#_overview">Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_version_information">Version information</a></li>
-<li><a href="#_contact_information">Contact information</a></li>
 <li><a href="#_license_information">License information</a></li>
 <li><a href="#_uri_scheme">URI scheme</a></li>
 <li><a href="#_tags">Tags</a></li>
@@ -533,13 +532,13 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#_paths">Paths</a>
 <ul class="sectlevel2">
-<li><a href="#_indexusingpost">index</a></li>
-<li><a href="#_indexusingget">index</a></li>
-<li><a href="#_indexusingput">index</a></li>
-<li><a href="#_indexusingdelete">index</a></li>
-<li><a href="#_indexusingpatch">index</a></li>
-<li><a href="#_indexusinghead">index</a></li>
-<li><a href="#_indexusingoptions">index</a></li>
+<li><a href="#_errorhtmlusingpost">errorHtml</a></li>
+<li><a href="#_errorhtmlusingget">errorHtml</a></li>
+<li><a href="#_errorhtmlusingput">errorHtml</a></li>
+<li><a href="#_errorhtmlusingdelete">errorHtml</a></li>
+<li><a href="#_errorhtmlusingpatch">errorHtml</a></li>
+<li><a href="#_errorhtmlusinghead">errorHtml</a></li>
+<li><a href="#_errorhtmlusingoptions">errorHtml</a></li>
 <li><a href="#_createstudentusingpost">创建一个学生</a></li>
 <li><a href="#_getstudentteachersusingget">获取教某个学生的老师清单</a></li>
 <li><a href="#_getstudentlistusingget">获取学生清单</a></li>
@@ -553,12 +552,9 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 <li><a href="#_definitions">Definitions</a>
 <ul class="sectlevel2">
+<li><a href="#_modelandview">ModelAndView</a></li>
 <li><a href="#_user">User</a></li>
-</ul>
-</li>
-<li><a href="#_securityscheme">Security</a>
-<ul class="sectlevel2">
-<li><a href="#_authorization">Authorization</a></li>
+<li><a href="#_view">View</a></li>
 </ul>
 </li>
 </ul>
@@ -569,27 +565,20 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_overview">Overview</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Spring Boot Starter Swagger</p>
+<p>Api Documentation</p>
 </div>
 <div class="sect2">
 <h3 id="_version_information">Version information</h3>
 <div class="paragraph">
-<p><em>Version</em> : 2.0.2.RELEASE</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_contact_information">Contact information</h3>
-<div class="paragraph">
-<p><em>Contact</em> : didi<br>
-<em>Contact Email</em> : <a href="mailto:dyc87112@qq.com">dyc87112@qq.com</a></p>
+<p><em>Version</em> : 1.0</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_license_information">License information</h3>
 <div class="paragraph">
-<p><em>License</em> : Apache License, Version 2.0<br>
-<em>License URL</em> : <a href="https://www.apache.org/licenses/LICENSE-2.0.html" class="bare">https://www.apache.org/licenses/LICENSE-2.0.html</a><br>
-<em>Terms of service</em> : <a href="https://github.com/dyc87112/spring-boot-starter-swagger" class="bare">https://github.com/dyc87112/spring-boot-starter-swagger</a></p>
+<p><em>License</em> : Apache 2.0<br>
+<em>License URL</em> : <a href="http://www.apache.org/licenses/LICENSE-2.0" class="bare">http://www.apache.org/licenses/LICENSE-2.0</a><br>
+<em>Terms of service</em> : urn:tos</p>
 </div>
 </div>
 <div class="sect2">
@@ -613,7 +602,7 @@ table.CodeRay td.code>pre{padding:0}
 <p>3-教学管理 : Teacher Controller</p>
 </li>
 <li>
-<p>demo-application : Demo Application</p>
+<p>basic-error-controller : Basic Error Controller</p>
 </li>
 <li>
 <p>用户管理 : User Controller</p>
@@ -627,10 +616,10 @@ table.CodeRay td.code>pre{padding:0}
 <h2 id="_paths">Paths</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_indexusingpost">index</h3>
+<h3 id="_errorhtmlusingpost">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>POST /hello</pre>
+<pre>POST /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -652,7 +641,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -692,7 +681,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -702,41 +691,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusingget">index</h3>
+<h3 id="_errorhtmlusingget">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>GET /hello</pre>
+<pre>GET /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -758,7 +723,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>401</strong></p></td>
@@ -783,7 +748,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -793,41 +758,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_2">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusingput">index</h3>
+<h3 id="_errorhtmlusingput">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>PUT /hello</pre>
+<pre>PUT /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -849,7 +790,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>201</strong></p></td>
@@ -889,7 +830,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -899,41 +840,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_3">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusingdelete">index</h3>
+<h3 id="_errorhtmlusingdelete">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>DELETE /hello</pre>
+<pre>DELETE /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -955,7 +872,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
@@ -980,7 +897,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -990,41 +907,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_4">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusingpatch">index</h3>
+<h3 id="_errorhtmlusingpatch">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>PATCH /hello</pre>
+<pre>PATCH /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1046,7 +939,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
@@ -1081,7 +974,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -1091,41 +984,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_5">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusinghead">index</h3>
+<h3 id="_errorhtmlusinghead">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>HEAD /hello</pre>
+<pre>HEAD /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1147,7 +1016,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
@@ -1182,7 +1051,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -1192,41 +1061,17 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_6">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
-<h3 id="_indexusingoptions">index</h3>
+<h3 id="_errorhtmlusingoptions">errorHtml</h3>
 <div class="literalblock">
 <div class="content">
-<pre>OPTIONS /hello</pre>
+<pre>OPTIONS /error</pre>
 </div>
 </div>
 <div class="sect3">
@@ -1248,7 +1093,7 @@ table.CodeRay td.code>pre{padding:0}
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>200</strong></p></td>
 <td class="tableblock halign-left valign-middle"><p class="tableblock">OK</p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_modelandview">ModelAndView</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>204</strong></p></td>
@@ -1283,7 +1128,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p><code><strong>/</strong></code></p>
+<p><code>text/html</code></p>
 </li>
 </ul>
 </div>
@@ -1293,34 +1138,10 @@ table.CodeRay td.code>pre{padding:0}
 <div class="ulist">
 <ul>
 <li>
-<p>demo-application</p>
+<p>basic-error-controller</p>
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_security_7">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -1404,30 +1225,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_8">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_getstudentteachersusingget">获取教某个学生的老师清单</h3>
@@ -1494,30 +1291,6 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_security_9">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -1589,30 +1362,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_10">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_xxxusingget">xxx</h3>
@@ -1682,30 +1431,6 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_security_11">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -1823,30 +1548,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_12">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_getuserlistusingget">获取用户列表</h3>
@@ -1913,30 +1614,6 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_security_13">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -2038,30 +1715,6 @@ table.CodeRay td.code>pre{padding:0}
 </li>
 </ul>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_security_14">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
 </div>
 </div>
 <div class="sect2">
@@ -2186,30 +1839,6 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_15">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 <div class="sect2">
 <h3 id="_deleteuserusingdelete">删除用户</h3>
@@ -2311,36 +1940,64 @@ table.CodeRay td.code>pre{padding:0}
 </ul>
 </div>
 </div>
-<div class="sect3">
-<h4 id="_security_16">Security</h4>
-<table class="tableblock frame-all grid-all spread">
-<colgroup>
-<col style="width: 15%;">
-<col style="width: 20%;">
-<col style="width: 65%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-middle">Type</th>
-<th class="tableblock halign-left valign-middle">Name</th>
-<th class="tableblock halign-left valign-middle">Scopes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>apiKey</strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong><a href="#_authorization">Authorization</a></strong></p></td>
-<td class="tableblock halign-left valign-middle"><p class="tableblock">global</p></td>
-</tr>
-</tbody>
-</table>
-</div>
 </div>
 </div>
 </div>
 <div class="sect1">
 <h2 id="_definitions">Definitions</h2>
 <div class="sectionbody">
+<div class="sect2">
+<h3 id="_modelandview">ModelAndView</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>empty</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>model</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">object</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>modelMap</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">&lt; string, object &gt; map</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>reference</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">boolean</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>status</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">enum (ACCEPTED, ALREADY_REPORTED, BAD_GATEWAY, BAD_REQUEST, BANDWIDTH_LIMIT_EXCEEDED, CHECKPOINT, CONFLICT, CONTINUE, CREATED, DESTINATION_LOCKED, EXPECTATION_FAILED, FAILED_DEPENDENCY, FORBIDDEN, FOUND, GATEWAY_TIMEOUT, GONE, HTTP_VERSION_NOT_SUPPORTED, IM_USED, INSUFFICIENT_SPACE_ON_RESOURCE, INSUFFICIENT_STORAGE, INTERNAL_SERVER_ERROR, I_AM_A_TEAPOT, LENGTH_REQUIRED, LOCKED, LOOP_DETECTED, METHOD_FAILURE, METHOD_NOT_ALLOWED, MOVED_PERMANENTLY, MOVED_TEMPORARILY, MULTIPLE_CHOICES, MULTI_STATUS, NETWORK_AUTHENTICATION_REQUIRED, NON_AUTHORITATIVE_INFORMATION, NOT_ACCEPTABLE, NOT_EXTENDED, NOT_FOUND, NOT_IMPLEMENTED, NOT_MODIFIED, NO_CONTENT, OK, PARTIAL_CONTENT, PAYLOAD_TOO_LARGE, PAYMENT_REQUIRED, PERMANENT_REDIRECT, PRECONDITION_FAILED, PRECONDITION_REQUIRED, PROCESSING, PROXY_AUTHENTICATION_REQUIRED, REQUESTED_RANGE_NOT_SATISFIABLE, REQUEST_ENTITY_TOO_LARGE, REQUEST_HEADER_FIELDS_TOO_LARGE, REQUEST_TIMEOUT, REQUEST_URI_TOO_LONG, RESET_CONTENT, SEE_OTHER, SERVICE_UNAVAILABLE, SWITCHING_PROTOCOLS, TEMPORARY_REDIRECT, TOO_EARLY, TOO_MANY_REQUESTS, UNAUTHORIZED, UNAVAILABLE_FOR_LEGAL_REASONS, UNPROCESSABLE_ENTITY, UNSUPPORTED_MEDIA_TYPE, UPGRADE_REQUIRED, URI_TOO_LONG, USE_PROXY, VARIANT_ALSO_NEGOTIATES)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>view</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><a href="#_view">View</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>viewName</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="sect2">
 <h3 id="_user">User</h3>
 <div class="paragraph">
@@ -2390,25 +2047,34 @@ table.CodeRay td.code>pre{padding:0}
 </tbody>
 </table>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_securityscheme">Security</h2>
-<div class="sectionbody">
 <div class="sect2">
-<h3 id="_authorization">Authorization</h3>
-<div class="paragraph">
-<p><em>Type</em> : apiKey<br>
-<em>Name</em> : TOKEN<br>
-<em>In</em> : HEADER</p>
-</div>
+<h3 id="_view">View</h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 42.8571%;">
+<col style="width: 57.1429%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-middle">Name</th>
+<th class="tableblock halign-left valign-middle">Schema</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-middle"><p class="tableblock"><strong>contentType</strong><br>
+<em>optional</em></p></td>
+<td class="tableblock halign-left valign-middle"><p class="tableblock">string</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-09-28 15:17:51 CST
+Last updated 2022-09-29 11:36:19 CST
 </div>
 </div>
 </body>
