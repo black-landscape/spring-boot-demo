@@ -8,14 +8,24 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.validation.constraints.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @JacksonXmlRootElement(localName = "User")
 @ApiModel(description = "用户实体")
 public class User {
+
+    @Id
+    @GeneratedValue
     @JacksonXmlProperty(localName = "id")
     @ApiModelProperty(value = "用户编号", position = 1)
     private Long id;
@@ -33,9 +43,14 @@ public class User {
     @ApiModelProperty(value = "用户年龄", position = 3)
     private Integer age;
 
-    @NotNull
-    @Email
-    @JacksonXmlProperty(localName = "email")
-    @ApiModelProperty(value = "用户邮箱", position = 4)
-    private String email;
+//    @NotNull
+//    @Email
+//    @JacksonXmlProperty(localName = "email")
+//    @ApiModelProperty(value = "用户邮箱", position = 4)
+//    private String email;
+
+    public User(String name, Integer age) {
+        this.name = name;
+        this.age = age;
+    }
 }
