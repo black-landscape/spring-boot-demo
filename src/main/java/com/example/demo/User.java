@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Max;
 
 @Entity
 @Data
@@ -17,6 +18,7 @@ public class User {
     private Long id;
 
     private String name;
+    @Max(50)
     private Integer age;
 
     public User(String name, Integer age) {
