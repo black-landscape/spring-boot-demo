@@ -36,9 +36,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public int getAllUsers() {
-        int count = jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
-//        return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
-        return count;
+        return jdbcTemplate.queryForObject("select count(1) from USER", Integer.class);
     }
 
 
