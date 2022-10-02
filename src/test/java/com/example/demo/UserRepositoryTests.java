@@ -18,6 +18,8 @@ public class UserRepositoryTests {
 
     @Test
     public void test() throws Exception {
+        System.out.println("CacheManager type : " + cacheManager.getClass());
+
         userRepository.save(new User("AAA", 10));
 
         User u1 = userRepository.findByName("AAA");
