@@ -1,18 +1,15 @@
 package com.example.demo;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 
-@RestController
+@Controller
 public class HelloController {
-    public static void main(String[] args) {
-        SpringApplication.run(HelloController.class, args);
-    }
 
-    @RequestMapping("/hello")
-    String index() {
-        return "Hello World!";
+    @GetMapping("/")
+    public String index(ModelMap map) {
+        map.addAttribute("host", "https://blog.blood.com");
+        return "index";
     }
-
 }
