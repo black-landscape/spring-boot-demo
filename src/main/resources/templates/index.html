@@ -5,11 +5,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Spring Boot 中使用 ECharts</title>
+    <script src="./css/echarts.min.js"></script>
 </head>
 
 <body>
-    <h1 th:text="${host}">Hello World</h1>
+    <div id="main" style="width:1000px; height:400px"></div>
 </body>
+<script type="text/javascript">
+    let myChart = echarts.init(document.getElementById('main'));
+    let option = {
+        title: {
+            text: 'Spring Boot 中使用 Echarts'
+        },
+        tooltip: {},
+        xAxis: {
+            data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+        },
+        yAxis: {},
+        series: [{
+            data: [820, 932, 901, 934, 1290, 1330, 1320],
+            type: 'line'
+        }]
+    };
+    myChart.setOption(option);
+</script>
 
 </html>
