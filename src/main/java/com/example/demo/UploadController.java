@@ -23,12 +23,14 @@ public class UploadController {
 
     @PostMapping("/upload")
     @ResponseBody
-    public String create(@RequestPart MultipartFile file) throws Exception {
-        String fileName = file.getOriginalFilename();
-        String filePath = path + fileName;
+    public String create(@RequestPart MultipartFile[] files) throws Exception {
+        StringBuffer message = new StringBuffer();
 
-        File dest = new File(filePath);
-        Files.copy(file.getInputStream(), dest.toPath());
-        return "Upload file success : ";
+        for (MultipartFile file : files) {
+            File dest = new File(path + file.getOriginalFilename());
+            Files.copy(file.getInputStream(), dest.toPath());
+            message.append("Upload file success : " + dest.getAbsolutePath()).append("<br>");
+        }
+        return message.toString();
     }
 }
